@@ -9,8 +9,9 @@
 
 A tasty blogging theme for Ghost :ghost:
 
+- Revised for Ghost 5
 - Replaced Tocify with TocBot, no jQuery dependency
-- Uses Ghost 5 Native Discussions, removed GiTalk and Disqus
+- Uses Ghost Native Discussions, removed GiTalk and Disqus
 - No Math Library
 - Removed Chinese fonts
 - Carousel with Slider always active
@@ -21,9 +22,7 @@ A tasty blogging theme for Ghost :ghost:
 - [Bulma][bulma] - CSS Framework
 - [Prismjs][prismjs] - A lightweight syntax highlighter
 - [JQuery][jquery] - A well-known JavaScript library (for tocify only now)
-- [jQuery.tocify.js][tocify] - Table of Content generator (also JQuery-UI)
-- [KaTeX][katex] - A faster LaTeX equation rendering library (since v0.3.0)
-- [Gitalk][gitalk] - A Github issued based comment system (since v0.3.0)
+- [Tocbot][tocbot] - Table of Content generator 
 - [ghost-search][ghost-search] - An instant search library using Ghost Content API (since v1.0.0)
 - [iconfont][iconfont] - A free icon solution (since v1.2.3)
 

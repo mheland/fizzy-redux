@@ -141,7 +141,7 @@ strong{
 .featured-label {
     position: absolute;
 	/* background: linear-gradient(181deg, #fb3b3b,#e12828); */
-	background: orange;
+	background: transparent;
     color: #fff;
     font-size: .875rem;
     font-weight: 600;
