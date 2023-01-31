@@ -21,12 +21,9 @@ A tasty blogging theme for Ghost :ghost:
 
 - [Bulma][bulma] - CSS Framework
 - [Prismjs][prismjs] - A lightweight syntax highlighter
-- [JQuery][jquery] - A well-known JavaScript library (for tocify only now)
 - [Tocbot][tocbot] - Table of Content generator 
 - [ghost-search][ghost-search] - An instant search library using Ghost Content API (since v1.0.0)
 - [iconfont][iconfont] - A free icon solution (since v1.2.3)
-
-
 
 
 [bulma]: https://bulma.io/
