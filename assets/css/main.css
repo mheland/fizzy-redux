@@ -1349,7 +1349,7 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
  
 .youtube-player .videotitle {  
     position: absolute;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
     color: white;
     text-shadow: 1px 1px black;
     left: 10px;
