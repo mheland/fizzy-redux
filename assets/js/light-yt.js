@@ -48,7 +48,7 @@ function initYouTubeVideos() {
 
     // Create TextNode for title with CSS class videotitle
     var videoTitle = document.createElement('div');
-    var titleNode = document.createTextNode('Reading YouTube title..');
+    var titleNode = document.createTextNode('');
     videoTitle.setAttribute('class', 'videotitle');
     videoTitle.setAttribute('id', thisPlayerId);
     videoTitle.appendChild(titleNode);
