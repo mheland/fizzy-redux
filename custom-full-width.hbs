@@ -47,7 +47,7 @@
                     {{/has}}
 
                     {{!-- content --}}
-                    <div class="content post-content is-size-6-mobile is-georgia">{{content}}</div>
+                    <div id="bodycontent" class="content post-content is-size-6-mobile is-georgia">{{content}}</div>
 
                     {{!-- like BTN --}}
                     {{> "post/like"}}
@@ -66,6 +66,9 @@
     </article>
 </section>
 <section class="section is-vpadding-15"></section>
+
+{{!-- post tracker --}}
+{{> "post/read_track"}}
 
 {{!-- toc --}}
 {{> "post/post_toc"}}
