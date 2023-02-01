@@ -1,0 +1,21 @@
+<script>
+    console.log('Tracking'); 
+
+    const options = {
+     threshold: 1,
+    };
+
+    function handleIntersection(entries) {
+        entries.map((entry) => {
+            if (entry.isIntersecting) {
+            console.log('Log event and unobserve');
+            plausible('PageRead');
+            observer.unobserve(entry.target);
+            }
+        });
+        }
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+    observer.observe(document.getElementById("bodycontent"));
+
+</script>

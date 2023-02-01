@@ -1,6 +1,7 @@
 {{!< default}}
 
 
+
 {{#post}}
 <section class="section is-mobile-paddingless">
     <div class="columns">
@@ -47,24 +48,38 @@
                         {{/has}}
 
                         {{!-- content --}}
-                        <div class="content post-content is-size-6-mobile is-georgia">{{content}}</div>
+                        <div id="bodycontent" class="content post-content is-size-6-mobile is-georgia">{{content}}</div>
 
-			{{!-- like BTN --}}
+			            {{!-- like BTN --}}
                         {{> "post/like"}}
 
 
                         {{!-- author box --}}
                         {{! > "post/post_author"}}
                         
+
+	                    
+
+
                     </section>
                 </div>
+
+
+
             </article>
         </div>
         <div class="column is-hidden-touch">
             <div id="toc"></div>
         </div>
     </div>
+
+
+
+
 </section>
+
+{{!-- post tracker --}}
+{{> "post/read_track"}}
 
 {{!-- toc --}}
 {{> "post/post_toc"}}
