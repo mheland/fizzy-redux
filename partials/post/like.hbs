@@ -1,5 +1,5 @@
 <hr>
-<div class="is-montserrat is-uppercase has-text-centered is-size-7">
+<div id="endofpage" class="is-montserrat is-uppercase has-text-centered is-size-7">
 
 How's my writing? Anonymous feedback, thank you!<br>
  
@@ -12,3 +12,26 @@ data-i18n_dislike="Nah, it needs work." data-i18n_after_like="Thank you" data-i1
 <!-- LikeBtn.com END -->
 
 </div>
+
+<script>
+    console.log('Tracking'); 
+
+    const options = {
+     threshold: 1,
+    };
+
+    function handleIntersection(entries) {
+        entries.map((entry) => {
+            if (entry.isIntersecting) {
+            console.log('Log event and unobserve');
+            plausible('PageRead');
+            observer.unobserve(entry.target);
+            }
+        });
+        }
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+    observer.observe(document.getElementById("endofpage"));
+
+</script>
+
