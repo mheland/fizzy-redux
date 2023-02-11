@@ -12,7 +12,6 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-
     
     {{!-- This tag outputs SEO meta + structured data and Code injections in Site Header--}}
     {{ghost_head}}
@@ -24,8 +23,6 @@
     {{!-- Google Fonts--}}
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
 
-    {{!-- Google Fonts Localized --}}
-    {{!-- <link rel="stylesheet" type="text/css" href="{{asset 'css/font.css'}}" /> --}}
 
     {{!-- Bulma v0.7.5 --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" rel="stylesheet">
@@ -84,14 +81,13 @@
 
     {{!-- gallery popup DISABLED --}}
     {{!-- <script src="{{asset 'js/popup.min.js'}}"></script> --}}
-
-    {{!-- jquery: for carousel + prismjs --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
     
     {{!-- import js --}}
     <script src="{{asset 'js/main.js'}}"></script>
-    
-    {{!-- carousel: js --}}
+
+    {{!-- carousel: js  on homepage --}}
+    {{#is "home"}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" ></script>
     <script>
         $(document).ready(function(){
@@ -110,6 +106,7 @@
             });
         });      
     </script>
+    {{/is}}
     
 
 
