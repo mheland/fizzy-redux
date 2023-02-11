@@ -48,32 +48,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@tryghost/content-api@1.11.4/umd/content-api.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
 	
-    <script type="text/javascript" src="{{asset "js/ghost-search.min.js"}}"></script>
-    <script type="text/javascript">
-        let ghostSearch = new GhostSearch({
-            key: search_key, // set var search_key in Site Header
-            host: search_url, // set var search_url in Site Header
-            input:   '#search-input',
-            results: '#search-results',
-            options: {
-                limit: 10
-            },
-            template: function(result) {
-                let url = [location.protocol, '//', location.host].join('');
-                return '<a class="navbar-item" href="' + url + '/' + result.slug + '/">' + result.title + '</a>';  
-            },
-            on: {
-                afterDisplay: function(results){
-                    if (results.total == 0 && document.getElementById('search-input').value != '') {
-                        let resultsElement = document.getElementById('search-results');
-                        let e = document.createElement('p');
-                        e.innerHTML = "<a class='navbar-item'>{{t 'No results'}}</a>";
-                        resultsElement.appendChild(e.firstChild);
-                    };
-                }
+
+    {{!-- SearchIn Ghost --}}
+
+    <script src="{{asset 'js/searchinghost.min.js'}}"></script>
+
+    <script>
+        var searchinGhost = new SearchinGhost({
+            key: search_key,
+            postsFields: ['title', 'url', 'published_at'],
+            postsExtraFields: [],
+            postsFormats: [],
+            indexedFields: ['title'],
+            template: function(post) {
+                return `<a href="${post.url}">${post.title}</a><br><div id="search-results-date" class="is-uppercase is-size-7">${post.published_at}</div>`
             }
-        })
+        });
     </script>
+
 
     {{!-- This tag outputs Code injections in Site Footer--}}
     {{ghost_foot}}
