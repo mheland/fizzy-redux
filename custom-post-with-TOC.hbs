@@ -50,9 +50,7 @@
 
                         {{!-- like BTN --}}
                         {{> "post/like"}}
-
-                        
-                        
+                                                
                     </section>
                 </div>
             </article>
@@ -64,9 +62,6 @@
 </section>
 
 
-{{!-- toc --}}
-{{> "post/post_toc"}}
-
 {{!-- aside section (related post, prev & next) --}}
 {{> "post/post_aside"}}
 
@@ -75,6 +70,11 @@
 
 {{!-- comment --}}
 {{> "post/post_comment"}}
+
+<!-- TOCBOT BEGIN -->
+
+<script src="{{asset 'js/tocbot.min.js'}}"></script>
+<link rel="stylesheet" href="{{asset 'css/tocbot.css'}}">
 
 
 <script>
@@ -86,6 +86,7 @@ tocbot.init({
 });
 </script>
 
+<!-- TOCBOT END -->
 
 {{/post}}
 
