@@ -46,6 +46,7 @@
 
     {{!-- ghost-search --}}
     <script src="https://cdn.jsdelivr.net/npm/@tryghost/content-api@1.11.4/umd/content-api.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
 	
     <script type="text/javascript" src="{{asset "js/ghost-search.min.js"}}"></script>
     <script type="text/javascript">
@@ -83,9 +84,10 @@
     {{!-- import js --}}
     <script src="{{asset 'js/main.js'}}"></script>
 
+
     {{!-- carousel: js  on homepage --}}
     {{#is "home"}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" ></script>
     <script>
         $(document).ready(function(){
