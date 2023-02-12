@@ -58,8 +58,8 @@
             key: search_key,
             postsFields: ['title', 'url', 'published_at'],
             postsExtraFields: [],
-            postsFormats: [],
-            indexedFields: ['title'],
+            postsFormats: ['plaintext'],
+            indexedFields: ['title', 'excerpts'],
             template: function(post) {
                 return `<a href="${post.url}">${post.title}</a><br><div id="search-results-date" class="is-uppercase is-size-7">${post.published_at}</div>`
             }
