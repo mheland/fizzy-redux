@@ -56,7 +56,7 @@ function initYouTubeVideos() {
 
     // Create the play button overlay on poster image
     var playButton = document.createElement('div');
-    playButton.setAttribute('class', 'play');
+    playButton.setAttribute('class', 'play plausible-event-name=VideoPlay');
     div.appendChild(playButton);
     div.onclick = function () {
       labnolIframe(this);
