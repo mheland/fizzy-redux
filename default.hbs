@@ -61,7 +61,7 @@
             postsFormats: ['plaintext'],
             indexedFields: ['title', 'excerpt'],
             template: function(post) {
-                return `<a href="${post.url}">${post.title}</a><br><div id="search-results-date" class="is-uppercase is-size-7">${post.published_at}</div>`
+                return `<a href="${post.url}">${post.title}<br><div id="search-results-date" class="is-uppercase is-size-7">${post.published_at}</div></a>`
             }
         });
     </script>
