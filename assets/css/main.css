@@ -1399,3 +1399,19 @@ ul.post-archive{margin-left:0!important;line-height:2 !important;}
 .kg-file-card-title+.kg-file-card-caption {
     margin-top: 11px;
 }
+
+/* ANNOUNCEMENT BAR */
+
+.gh-announcement-bar {
+    padding: 8px 38px !important;
+    min-height: 18px !important;
+    font-size: 1.2rem !important;
+	font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-weight: 600;
+}
+
+.gh-announcement-bar.dark {
+    background-color: #a8a8a8 !important;
+    color: #fff;
+}
+

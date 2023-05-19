@@ -16,7 +16,7 @@ data-i18n_dislike="Nah, it needs work." data-i18n_after_like="Thank you" data-i1
 <!-- Page read tracker -->
 
 <script>
-    console.log('Tracking on likepanel'); 
+    console.log('Tracking likepanel'); 
 
     const options = {
      threshold: 1,
@@ -25,8 +25,8 @@ data-i18n_dislike="Nah, it needs work." data-i18n_after_like="Thank you" data-i1
     function handleIntersection(entries) {
         entries.map((entry) => {
             if (entry.isIntersecting) {
-            const pname = document.title.slice(0, 20);
-            console.log('Log event and unobserve ' + pname);
+            const pname = document.title.slice(0, 30);
+            console.log('Log and unobserve ' + pname);
             plausible('PageRead', {props: {page: pname }});
             observer.unobserve(entry.target);
             }
