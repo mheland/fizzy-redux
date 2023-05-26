@@ -1,7 +1,9 @@
 {{!-- Homepage Showcase 2019.05.27--}}
 
 {{!-- slick: css --}}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+
+
+<link rel="stylesheet" href="{{asset "css/slick.min.css"}}"> 
 <link rel="stylesheet" href="{{asset "css/slick-theme.css"}}"> 
 
 
@@ -59,9 +61,7 @@
                     {{#get "posts" limit="2" include="tags" filter="featured:true" as |top-featured|}}
                     <div class="top-featured">
                         {{#top-featured}}
-                        <div class="tf-item img-bg box has-shadow-lift can-scale" style="background-image: url({{img_url feature_image size="medium"}});background-position: center center;background-repeat: no-repeat;background-size: cover;">
-
-                           
+                        <div class="tf-item img-bg box has-shadow-lift can-scale" style="background-image: url({{img_url feature_image size="medium"}});background-position: center center;background-repeat: no-repeat;background-size: cover;">                          
 
                             <a href="{{url}}" rel="bookmark" class="link-block"></a>
                             <div class="tf-meta bg-grad-b">
