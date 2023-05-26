@@ -17,17 +17,15 @@
     {{!-- This tag outputs SEO meta + structured data and Code injections in Site Header--}}
     {{ghost_head}}
 
-    {{!-- main css --}}
+    {{!-- Fizzy theme - main css --}}
     <link rel="stylesheet" type="text/css" href="{{asset 'css/main.css'}}" />
     <link rel="stylesheet" type="text/css" href="{{asset 'css/custom.css'}}" />
     <link rel="stylesheet" type="text/css" href="{{asset 'css/class.css'}}" />    
     <link rel="stylesheet" type="text/css" href="{{asset 'css/iconfont.css'}}" />    
     
 
-
-    {{!-- Google Fonts--}}
+    {{!-- Google Fonts from Bunny --}}
     <link href="https://fonts.bunny.net/css?family=montserrat:400,600,700" rel="stylesheet" />
-
     
     {{!-- Prismjs: css--}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
@@ -54,7 +52,6 @@
     {{!-- ghost-search --}}
     <script src="https://cdn.jsdelivr.net/npm/@tryghost/content-api@1.11.4/umd/content-api.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
-	
 
     {{!-- SearchIn Ghost --}}
 
@@ -75,18 +72,15 @@
 
     {{!-- This tag outputs Code injections in Site Footer--}}
     {{ghost_foot}}
-
-    {{!-- gallery popup DISABLED --}}
-    {{!-- <script src="{{asset 'js/popup.min.js'}}"></script> --}}
     
     {{!-- import js --}}
     <script src="{{asset 'js/main.js'}}"></script>
 
 
-    {{!-- carousel: js  on homepage --}}
+    {{!-- carousel: js only on homepage --}}
     {{#is "home"}}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" ></script>
+    <script src="{{asset "js/slick.min.js"}}" ></script>
     <script>
         $(document).ready(function(){
             $('#carousel-home').slick({
