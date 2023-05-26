@@ -51,10 +51,6 @@
 
     {{!-- ghost-search --}}
     <script src="https://cdn.jsdelivr.net/npm/@tryghost/content-api@1.11.4/umd/content-api.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
-
-    {{!-- SearchIn Ghost --}}
-
     <script src="{{asset 'js/searchinghost.min.js'}}"></script>
 
     <script>
@@ -79,7 +75,7 @@
 
     {{!-- carousel: js only on homepage --}}
     {{#is "home"}}
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"  ></script>
     <script src="{{asset "js/slick.min.js"}}" ></script>
     <script>
         $(document).ready(function(){
