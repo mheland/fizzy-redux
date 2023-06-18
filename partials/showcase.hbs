@@ -18,7 +18,7 @@
                         {{!-- get 10 posts with tag #carousel as --}}
                         {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}} 
                         {{#foreach carousel}}
-                            <div class="carousel-item box img-bg has-shadow-lift can-scale" style="background-image: url({{img_url feature_image size="large"}});">
+                            <div class="carousel-item box img-bg has-shadow-lift can-scale" style="background-image: url(https://cdn.magnushelander.se{{img_url feature_image size="large"}});">
                                 <a href="{{url}}" rel="bookmark" class="link-block"></a>
                                 <div class="carousel-meta bg-grad-b">
                                     {{#primary_tag}}
@@ -61,7 +61,7 @@
                     {{#get "posts" limit="2" include="tags" filter="featured:true" as |top-featured|}}
                     <div class="top-featured">
                         {{#top-featured}}
-                        <div class="tf-item img-bg box has-shadow-lift can-scale" style="background-image: url({{img_url feature_image size="medium"}});background-position: center center;background-repeat: no-repeat;background-size: cover;">                          
+                        <div class="tf-item img-bg box has-shadow-lift can-scale" style="background-image: url(https://cdn.magnushelander.se{{img_url feature_image size="medium"}});background-position: center center;background-repeat: no-repeat;background-size: cover;">                          
 
                             <a href="{{url}}" rel="bookmark" class="link-block"></a>
                             <div class="tf-meta bg-grad-b">
