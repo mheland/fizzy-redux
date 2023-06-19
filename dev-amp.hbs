@@ -1,0 +1,101 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{meta_title}}</title>
+    <link rel="canonical" href="/index.html">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    {{amp_ghost_head}}
+
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    {{!-- Style Custom --}}
+    <style amp-custom>.u-bgColor{background-color:#1c9963}{{> "amp/amp-styles"}}</style>
+
+
+    {{!-- Google Fonts from Bunny --}}
+    <link href="https://fonts.bunny.net/css?family=montserrat:400,600,700" rel="stylesheet" />
+    {{amp_components}}
+
+  </head>
+  <body class="amp-template">
+
+    <main class="main" >
+        {{!-- Content --}}
+        {{#post}}
+
+        <article class="article">
+            <header class="article-header">
+                {{!-- Title --}}
+                <h1 class="article-title">{{title}}</h1>
+
+                {{!-- Excerpt --}}
+                {{#if custom_excerpt}}<p class="article-excerpt">{{custom_excerpt}}</p>{{/if}}
+
+                <div class="article-meta">
+                    {{!-- Author Name --}}
+                    {{#primary_author}}<span class="author-name">{{t "By"}} <a href="{{url absolute="true"}}">{{name}}</a></span>{{/primary_author}}
+
+                    {{!-- Datetime --}}
+                    <span class="timestamp">
+                        <time class="datetime" datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time>
+                        <span>{{t "in"}}</span>
+                    </span>
+
+                    {{!-- Category --}}
+                    {{#if primary_tag}}{{#primary_tag}}
+                        <span class="categories"><a href="{{url}}" title="{{name}}">{{name}}</a></span>
+                    {{/primary_tag}}{{/if}}
+                </div>
+            </header>
+
+            {{!-- featured image --}}
+            {{#if feature_image}}
+                <figure class="article-image u-block u-marginTop30">
+                    <amp-img src="{{img_url feature_image absolute="true"}}" width="1100" height="513" layout="responsive"></amp-img>
+                </figure>
+            {{/if}}
+
+            {{!-- article body (all content) --}}
+            <div class="article-body"> {{amp_content}} </div>
+
+            {{!-- Post All Tags (category) --}}
+            {{#if tags}}
+                <div class="article-tags">
+                    {{#foreach tags}}
+                        <a href="{{url absolute="true"}}" title="{{name}}" class="button">{{name}}</a>
+                    {{/foreach}}
+                </div>
+            {{/if}}
+
+        </article>
+
+{{/post}}
+
+{{#get "posts" limit="5" filter="tags:[{{post.tags}}]+id:-{{post.id}}"}}
+    <div class="related u-container">
+        <div class="related-title"><span>{{t "Related Articles"}}</span></div>
+
+        {{#foreach posts}}
+        <div class="story">
+            <a href="{{url absolute="true"}}amp" class="story-link u-block u-relative">
+                <span class="story-border u-flexCenter u-absolute">{{@number}}</span>
+                <h3 class="story-title">{{title}}</h3>
+            </a>
+        </div>
+        {{/foreach}}
+
+    </div>
+{{/get}}
+
+
+    </main>
+
+
+  </body>
+</html>
