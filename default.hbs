@@ -36,6 +36,13 @@
     {{!-- YouTube light embed: js--}}
     <script type="text/javascript" src="{{asset "js/light-yt.js"}}"></script>
 
+    {{!-- Slider on homepage --}}
+
+    {{#is "home"}}
+    <link rel="stylesheet" href="{{asset "css/glide.core.min.css"}}">
+    <link rel="stylesheet" href="{{asset "css/glide.theme.css"}}">
+    {{/is}}
+
 </head>
 
 <body class="has-background-light-line"  >
@@ -71,30 +78,28 @@
     
     {{!-- import js --}}
     <script src="{{asset "js/jquery-3.7.0.min.js"}}"  ></script>
+ 
     <script src="{{asset 'js/main.js'}}"></script>
     
 
     {{!-- carousel: js only on homepage --}}
     {{#is "home"}}
 
-    <script src="{{asset "js/slick.min.js"}}" ></script>
+    <script src="{{asset "js/glide.min.js"}}" ></script>   
     <script>
-        $(document).ready(function(){
-            $('#carousel-home').slick({
-                autoplay: true,
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplaySpeed: 1500,
-                arrows:false,
-                dots: true,
-                centerMode: false,
-                focusOnSelect: false,
-		fade: true,
-		fadeSpeed: 1000
-            });
-        });      
+        
+        window.addEventListener('load', function(){
+        new Glide('.glider', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1,
+        autoplay: 2000,
+        hoverpause: true,
+        }).mount();
+        })
+
     </script>
+
     {{/is}}
     
 
