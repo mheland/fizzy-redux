@@ -7,6 +7,8 @@ into the {body} of the default.hbs template --}}
 {{!-- showcase --}}
 {{> showcase}}
 
+{{!-- BRANCH test --}}
+
 {{!-- main --}}
 {{#get "posts" include="tags,authors" limit=@config.posts_per_page order="published_at desc"}}
 <main class="section">
