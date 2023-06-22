@@ -11,7 +11,7 @@ into the {body} of the default.hbs template --}}
 
 {{!-- main --}}
 {{#get "posts" include="tags,authors" limit=@config.posts_per_page order="published_at desc"}}
-<main class="section">
+<main class="section pt-0">
     <div class="columns">
         <div class="column is-hidden-touch is-1-desktop is-1-widescreen is-2-fullhd"></div>
         <div class="column is-12-tablet is-10-desktop is-10-widescreen is-8-fullhd">

@@ -10,11 +10,15 @@
             <div class="columns">
                 {{!-- carousel start--}}
             
+
+
                 <div class="column is-7">
-                    <div class="glider">
+                    <div class="glide">
                                 
-                            <div class="glide__track" data-glide-el="track">
+                        <div class="glide__track" data-glide-el="track">
             
+                                
+
                                 <ul class="glide__slides">
                                     {{!-- get 10 posts with tag #carousel as --}}
                                     {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}}
@@ -27,19 +31,35 @@
                                             <h2 class="slide-txt is-size-4 is-size-5-mobile has-text-white has-text-weight-semibold has-text-shadow-black">{{title}}</h2>
                                         </a>                                         
                                     </li>
-            
+
                                     {{/foreach}}
                                     {{/get}}
                                 </ul>
                             
                             </div>
-                    
-                    </div>    
-                    
+
+                        <div id="glideButtons" class="glide__bullets" data-glide-el="controls[nav]"></div>    
+                        
+                    </div>                        
                 </div>
             
                 {{!-- carousel end --}}
         
+                {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}}                
+
+                <script type="text/javascript">
+                // Create Button for each slide
+                for (let i = 0; i < {{posts.length}}; i++) {
+                    var buttonWrapper = document.createElement('button');
+                    buttonWrapper.className = "glide__bullet";                             
+                    
+                    buttonWrapper.setAttribute("data-glide-dir", "=" + i);                                    
+                    document.getElementById("glideButtons").appendChild(buttonWrapper);                                     
+                }           
+                </script>
+
+                {{/get}}
+
 
         {{!-- top-featured start --}}
         <div class="column is-5">
