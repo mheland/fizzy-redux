@@ -22,8 +22,8 @@
                                 <ul class="glide__slides">
                                     {{!-- get 10 posts with tag #carousel as --}}
                                     {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}}
-                                    <script>                                        
-                                        var sliderItems = {{posts.length}};
+                                    <script>                                                                                
+                                        sessionStorage.setItem("sliderItems",{{posts.length}});
                                     </script>
                                     {{#foreach carousel}}
             
@@ -52,7 +52,7 @@
 
                 <script type="text/javascript">
                 // Create Button for each slide            
-                for (let i = 0; i < sliderItems; i++) {
+                for (let i = 0; i < sessionStorage.getItem("sliderItems"); i++) {
                     var buttonWrapper = document.createElement('button');
                     buttonWrapper.className = "glide__bullet";                                                 
                     buttonWrapper.setAttribute("data-glide-dir", "=" + i);                                    
