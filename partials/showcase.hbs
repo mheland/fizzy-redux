@@ -9,95 +9,84 @@
         <div class="column is-12-tablet is-10-desktop is-10-widescreen is-8-fullhd">
             <div class="columns">
                 {{!-- carousel start--}}
-            
+
 
 
                 <div class="column is-7">
+                {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}}
+                    <script>
+                              sessionStorage.setItem("sliderItems", {{ posts.length }});
+                    </script>                    
                     <div class="glide">
-                                
                         <div class="glide__track" data-glide-el="track">
-            
-                                
-
-                                <ul class="glide__slides">
-                                    {{!-- get 10 posts with tag #carousel as --}}
-                                    {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}}
-                                    <script>                                                                                
-                                        sessionStorage.setItem("sliderItems",{{posts.length}});
-                                    </script>
-                                    {{#foreach carousel}}
-            
-                                    <li class="glide__slide">
-                                        
-                                        <a href="{{url}}">
-                                            <img src="https://cdn.magnushelander.se{{img_url feature_image size=" large"}}" alt="{{feature_image_alt}}">                                        
-                                            <h2 class="slide-txt is-size-4 is-size-5-mobile has-text-white has-text-weight-semibold has-text-shadow-black">{{title}}</h2>
-                                        </a>                                         
-                                    </li>
-
-                                    {{/foreach}}
-                                    {{/get}}
-                                </ul>
-                            
-                            </div>
-
-                        <div id="glideButtons" class="glide__bullets" data-glide-el="controls[nav]"></div>    
-                        
-                    </div>                        
+                            <ul class="glide__slides">
+                                {{#foreach carousel}}
+                                <li class="glide__slide">
+                                    <a href="{{url}}">
+                                        <img src="https://cdn.magnushelander.se{{img_url feature_image size=" large"}}"
+                                            alt="{{feature_image_alt}}">
+                                        <h2
+                                            class="slide-txt is-size-4 is-size-5-mobile has-text-white has-text-weight-semibold has-text-shadow-black">
+                                            {{title}}</h2>
+                                    </a>
+                                </li>
+                                {{/foreach}}                
+                            </ul>
+                        </div>
+                        <div id="glideButtons" class="glide__bullets" data-glide-el="controls[nav]"></div>
+                    </div>
+                {{/get}}
                 </div>
-            
+
                 {{!-- carousel end --}}
-        
-                               
 
                 <script type="text/javascript">
-                // Create Button for each slide            
-                for (let i = 0; i < sessionStorage.getItem("sliderItems"); i++) {
-                    var buttonWrapper = document.createElement('button');
-                    buttonWrapper.className = "glide__bullet";                                                 
-                    buttonWrapper.setAttribute("data-glide-dir", "=" + i);                                    
-                    document.getElementById("glideButtons").appendChild(buttonWrapper);                                     
-                }           
+                    // Create Button for each slide            
+                    for (let i = 0; i < sessionStorage.getItem("sliderItems"); i++) {
+                        var buttonWrapper = document.createElement('button');
+                        buttonWrapper.className = "glide__bullet";
+                        buttonWrapper.setAttribute("data-glide-dir", "=" + i);
+                        document.getElementById("glideButtons").appendChild(buttonWrapper);
+                    }           
                 </script>
 
-                
+
+                {{!-- top-featured start --}}
+                <div class="column is-5">
+                    {{#get "posts" limit="2" include="tags" filter="featured:true" as |top-featured|}}
+                    <div class="top-featured">
+                        {{#top-featured}}
+                        <div class="tf-item img-bg box has-shadow-lift can-scale"
+                            style="background-image: url(https://cdn.magnushelander.se{{img_url feature_image size="
+                            medium"}});background-position: center center;background-repeat: no-repeat;background-size:
+                            cover;">
+
+                            <a href="{{url}}" rel="bookmark" class="link-block"></a>
+                            <div class="tf-meta bg-grad-b">
+                                <a href="{{url}}" rel="bookmark" class="link-block"></a>
+
+                                {{#primary_tag}}
+                                <div class="tf-tag">
+                                    <a href="{{url}}" class="is-montserrat">{{name}}</a>
+                                </div>
+                                {{/primary_tag}}
 
 
-        {{!-- top-featured start --}}
-        <div class="column is-5">
-            {{#get "posts" limit="2" include="tags" filter="featured:true" as |top-featured|}}
-            <div class="top-featured">
-                {{#top-featured}}
-                <div class="tf-item img-bg box has-shadow-lift can-scale"
-                    style="background-image: url(https://cdn.magnushelander.se{{img_url feature_image size=" medium"}});background-position: center
-                    center;background-repeat: no-repeat;background-size: cover;">
-
-                    <a href="{{url}}" rel="bookmark" class="link-block"></a>
-                    <div class="tf-meta bg-grad-b">
-                        <a href="{{url}}" rel="bookmark" class="link-block"></a>
-
-                         {{#primary_tag}}
-                        <div class="tf-tag">
-                            <a href="{{url}}" class="is-montserrat">{{name}}</a>
+                                <a href="{{url}}">
+                                    <h2 class="is-size-5 has-text-white has-text-weight-semibold has-text-shadow-black">
+                                        {{title}}</h2>
+                                </a>
+                            </div>
                         </div>
-                        {{/primary_tag}}
-
-
-                        <a href="{{url}}">
-                            <h2 class="is-size-5 has-text-white has-text-weight-semibold has-text-shadow-black">
-                                {{title}}</h2>
-                        </a>
+                        {{/top-featured}}
                     </div>
+                    {{/get}}
                 </div>
-                {{/top-featured}}
+                <div class="column is-hidden-touch"></div>
+                {{!-- top-featured end --}}
             </div>
-            {{/get}}
         </div>
-        <div class="column is-hidden-touch"></div>
-        {{!-- top-featured end --}}
-    </div>
-    </div>
 
-    <div class="column is-hidden-touch"></div>
+        <div class="column is-hidden-touch"></div>
     </div>
 </section>
