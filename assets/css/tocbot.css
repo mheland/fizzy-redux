@@ -5,7 +5,6 @@
     width: 300px;
     right: 0px;
     padding-right: 20px;
-    
 }
 
 .toc>.toc-list {
@@ -68,6 +67,8 @@ a.toc-link {
     .toc {
         display: none!important;
     }
+}
+
 /*
     .toc.toc-right {
         transform: translateX(0);
@@ -83,6 +84,7 @@ a.toc-link {
         margin-right: 280px
     }
 }
+Here is an update!
 */
 
 

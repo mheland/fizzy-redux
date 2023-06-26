@@ -1128,7 +1128,7 @@ table tr td:last-child {border-right: solid 1px #dbdbdb;}
 ul.post-archive{margin-left:0!important;line-height:2 !important;}
 .post-archive-item{
 	display:flex;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: normal;
 	flex-wrap: nowrap;
 	line-height:2 !important;

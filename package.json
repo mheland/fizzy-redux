@@ -7,13 +7,43 @@
         "email": "magnus@helander.stream"
     },
     "engines": {
-        "ghost": ">=3.0.0"
+        "ghost": ">=5.0.0"
     },
     "keywords": [
         "ghost",
         "theme",
         "ghost-theme"
     ],
+    "scripts": {
+    "dev": "gulp",
+    "zip": "gulp zip",
+    "test": "gscan .",
+    "test:ci": "gscan --fatal --verbose .",
+    "pretest": "gulp build",
+    "preship": "yarn test",
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
+    },
+    "devDependencies": {
+        "autoprefixer": "10.4.14",
+        "beeper": "2.1.0",
+        "cssnano": "5.1.15",
+        "gscan": "4.37.0",
+        "gulp": "4.0.2",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "9.0.1",
+        "gulp-sourcemaps": "3.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-util": "3.0.8",
+        "gulp-watch": "5.0.1",
+        "gulp-zip": "5.1.0",
+        "postcss": "8.4.21",
+        "postcss-color-function": "4.1.0",
+        "postcss-custom-properties": "11.0.0",
+        "postcss-easy-import": "3.0.0"
+    },
+    "browserslist": [
+        "defaults"
+    ],        
     "dependencies": {},
     "config": {
         "posts_per_page": 8,
