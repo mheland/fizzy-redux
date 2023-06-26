@@ -30,7 +30,7 @@
   .glide__bullets {
     position: absolute;
     z-index: 2;
-    bottom: 2em;
+    bottom: 3rem;
     left: 50%;
     display: inline-flex;
     list-style: none;
@@ -67,16 +67,27 @@
     cursor: -webkit-grabbing; }
 
 
-  .glide__slides p.slide-txt {
+  a.slide-image .slide-txt {
     position: relative;
-    top: -85%;
-    left: 20px;
+    bottom: 12rem;
+    left: 15px;
+    font-size: 1.5em;
+    z-index: 2;
   }
 
-  .glide__slides img {
+  .glide__slide img {
     object-fit: cover;
     height: 360px;
+    width: 100%;
     border-radius: 10px;
+    display: block;
+    margin: 0 !important;
+}
+
+@media only screen and ( max-width: 770px ){
+  .glide__slide img {
+  height: 30vh;
+  }
 }
 
 .glide__slide--active{

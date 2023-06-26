@@ -4,15 +4,15 @@
 
 
 <section class="section showcase" id="showcase">
-    <div class="columns">
+    <div class="columns mb-0 pb-0">
         <div class="column is-hidden-touch is-1-desktop is-1-widescreen is-2-fullhd"></div>
-        <div class="column is-12-tablet is-10-desktop is-10-widescreen is-8-fullhd">
-            <div class="columns">
+        <div class="column is-12-tablet is-10-desktop is-10-widescreen is-8-fullhd mb-0 pb-0">
+            <div class="columns mb-0 pb-0">
                 {{!-- carousel start--}}
 
 
 
-                <div class="column is-7">
+                <div class="column is-7 mb-0 pb-0">
                 {{#get "posts" limit="6" include="tags,authors" filter="tags:[hash-carousel]" as |carousel|}}
                     <script>
                               sessionStorage.setItem("sliderItems", {{ posts.length }});
@@ -22,12 +22,12 @@
                             <ul class="glide__slides">
                                 {{#foreach carousel}}
                                 <li class="glide__slide">
-                                    <a href="{{url}}">
-                                        <img src="https://cdn.magnushelander.se{{img_url feature_image size=" large"}}"
-                                            alt="{{feature_image_alt}}">
-                                        <p 
-                                            class="slide-txt is-size-4 is-size-5-mobile has-text-white has-text-weight-semibold has-text-shadow-black">
-                                            {{title}}</p>
+                                    <a href="{{url}}" class="slide-image">
+                                        
+                                        <img src="https://cdn.magnushelander.se{{img_url feature_image size=" large"}}" alt="{{feature_image_alt}}">
+                                        <div class="slide-txt has-text-white has-text-weight-semibold has-text-shadow-black">
+                                            {{title}}
+                                        </div>
                                     </a>
                                 </li>
                                 {{/foreach}}                
@@ -52,7 +52,7 @@
 
 
                 {{!-- top-featured start --}}
-                <div class="column is-5">
+                <div class="column is-5 mb-0 pb-0">
                     {{#get "posts" limit="2" include="tags" filter="featured:true" as |top-featured|}}
                     <div class="top-featured">
                         {{#top-featured}}
