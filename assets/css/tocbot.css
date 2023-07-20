@@ -87,6 +87,12 @@ a.toc-link {
 Here is an update!
 */
 
-
+.tocheader {
+    background-color: lightslategray;
+    color: whitesmoke;
+    padding: 3px;
+    border-radius: 2px;
+    text-align: center;
+}
 
  
