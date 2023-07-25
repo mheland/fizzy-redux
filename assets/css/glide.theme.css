@@ -67,12 +67,14 @@
     cursor: -webkit-grabbing; }
 
 
-  a.slide-image .slide-txt {
+  li.glide__slide .slide-txt {
     position: relative;
-    bottom: 12rem;
+    font-size: 2em;
+    bottom: 25vmax;
     left: 15px;
-    font-size: 1.5em;
     z-index: 2;
+    line-height: 90%;
+    margin-top: -3vh;
   }
 
   .glide__slide img {
