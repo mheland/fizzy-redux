@@ -70,11 +70,11 @@
   li.glide__slide .slide-txt {
     position: relative;
     font-size: 2em;
-    bottom: 25vmax;
+    bottom: 70%;
     left: 15px;
     z-index: 2;
     line-height: 90%;
-    margin-top: -3vh;
+    margin-top: -1vh;
   }
 
   .glide__slide img {
