@@ -38,8 +38,11 @@
     {{!-- YouTube light embed: js--}}
     <script type="text/javascript" src="{{asset "built/light-yt.js"}}"></script>
 
+    {{#is "page,post"}}
     {{!-- Zoomable Image js--}}
     <script src="{{asset "built/openseadragon.min.js"}}" ></script>
+    {{/is}}
+    
 
     {{!-- Slider on homepage --}}
 
