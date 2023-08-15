@@ -30,11 +30,12 @@
   .glide__bullets {
     position: absolute;
     z-index: 2;
-    bottom: 3rem;
+    top: 300px;
     left: 50%;
     display: inline-flex;
     list-style: none;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+   }
   
   .glide__bullet {
     background-color: rgba(255, 255, 255, 0.5);
@@ -70,7 +71,7 @@
   li.glide__slide .slide-txt {
     position: relative;
     font-size: 2em;
-    bottom: 30%;
+    bottom: 100px;
     left: 15px;
     z-index: 2;
     line-height: 100%;
@@ -91,6 +92,12 @@
   .glide__slide img {
   height: 30vh;
   }
+
+  .glide__bullets {
+    top: 25vh;
+   }
+
+
 }
 
 .glide__slide--active{
